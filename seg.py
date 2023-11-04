@@ -67,7 +67,10 @@ if uploaded_image is not None:
 
         st.subheader('Segmentation Results')
 
-        columns = st.beta_columns(3)
+        # Create six columns
+        columns = st.columns(6)
+
         for i, segmented_image in enumerate(segmented_images):
-            columns[i].image(segmented_image, caption=f'Technique {i + 1}', use_column_width=True)
+            if i < len(columns):
+                columns[i].image(segmented_image, caption=f'Technique {i + 1}', use_column_width=True)
 
