@@ -24,6 +24,8 @@ if uploaded_image is not None:
     # Apply thresholding to create a binary image
     _, thresholded = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
 
+    st.image(thresholding, caption='Thresholding', use_column_width=True)
+
     # Reshape the image to a 2D array of pixels
     pixel_values = image.reshape((-1, 3))
     pixel_values = np.float32(pixel_values)
