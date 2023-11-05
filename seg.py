@@ -73,4 +73,3 @@ if uploaded_image is not None:
         for i, segmented_image in enumerate(segmented_images):
             if i < len(columns):
                 columns[i].image(segmented_image, caption=f'Technique {i + 1}', use_column_width=True)
-
