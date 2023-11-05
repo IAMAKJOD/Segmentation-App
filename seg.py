@@ -57,7 +57,7 @@ if uploaded_image is not None:
     segments.setK(200)
     graph_segmented = segments.processImage(image)
 
-    st.image(graph_segmented, caption='Felzenszwalb's Graph-Based', use_column_width=True)
+    st.image(graph_segmented, caption='Felzenszwalbs Graph-Based', use_column_width=True)
 
     # Apply SLIC superpixel segmentation
     slic_segments = slic(image, n_segments=100, compactness=10)
