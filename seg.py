@@ -51,19 +51,4 @@ if uploaded_image is not None:
     # Display Canny Edge Detection result
     st.image(edges, caption='Canny Edge Detection', use_column_width=True)
 
-    lab_image = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
-
-    # Apply Felzenszwalb's Graph-Based Superpixel Segmentation
-    segments = cv2.ximgproc.segmentation.createGraphSegmentation()
-    segments.setSigma(0.8)
-    segments.setK(200)
-    graph_segmented = segments.processImage(image)
-
-    st.image(graph_segmented, caption='Felzenszwalbs Graph-Based', use_column_width=True)
-
-    # Apply SLIC superpixel segmentation
-    slic_segments = slic(image, n_segments=100, compactness=10)
-    slic_segmented = label2rgb(slic_segments, image=image, kind='avg')
-
-    # Display SLIC Superpixel Segmentation result
-    st.image(slic_segmented, caption='Graph-Based Segmentation (SLIC)', use_column_width=True)
+    
