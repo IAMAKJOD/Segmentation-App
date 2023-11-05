@@ -51,4 +51,9 @@ if uploaded_image is not None:
     # Display Canny Edge Detection result
     st.image(edges, caption='Canny Edge Detection', use_column_width=True)
 
+    slic_segments = slic(image, n_segments=100, compactness=10)
+    slic_segmented = label2rgb(slic_segments, image=image, kind='avg')
+
+    # Display SLIC Superpixel Segmentation result
+    st.image(slic_segmented, caption='Graph-Based Segmentation (SLIC)', use_column_width=True)
     
